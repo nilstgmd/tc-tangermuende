@@ -18,13 +18,18 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "https://api.sendgrid.com/api/mail.send.json",
                 type: "POST",
+                headers: { 'Access-Control-Allow-Origin': '*' },
+                crossDomain: true,
                 data: {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
+                    api_user: "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",
+                    api_key: "gWYDxBJLT42WZPXhpmdUsQ",
+                    to: "nilstgmd@gmx.de",
+                    toname: "TC Tangermuende",
+                    subject: "Tennisclub Kontakt von " + name,
+                    from: email,
+                    text: "Neue Nachricht von " + name + ".\n\n" + message
                 },
                 cache: false,
                 success: function() {
