@@ -18,19 +18,10 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "https://api.sendgrid.com/api/mail.send.json",
+                url: "https://formspree.io/nilstgmd@gmx.de",
                 type: "POST",
-                headers: { 'Access-Control-Allow-Origin': '*', 'Origin': 'https://nilstgmd.github.io' },
-                crossDomain: true,
-                data: {
-                    api_user: "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",
-                    api_key: "gWYDxBJLT42WZPXhpmdUsQ",
-                    to: "nilstgmd@gmx.de",
-                    toname: "TC Tangermuende",
-                    subject: "Tennisclub Kontakt von " + name,
-                    from: email,
-                    text: "Neue Nachricht von " + name + ".\n\n" + message
-                },
+                data: {_replyto: email, Name: name, Telefonnummer: phone, Nachricht: message, _subject: "Neue Nachricht für TC Tangermünde"},
+                dataType: "json",
                 cache: false,
                 success: function() {
                     // Success message
@@ -38,7 +29,7 @@ $(function() {
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
+                        .append("<strong>Nachricht erfolgreich gesendet.</strong>");
                     $('#success > .alert-success')
                         .append('</div>');
 
@@ -50,7 +41,7 @@ $(function() {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", die Nachricht konnte nicht gesendet werden. Bitte überprüfe die korrekt Eingabe deiner Daten!");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
