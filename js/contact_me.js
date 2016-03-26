@@ -20,7 +20,7 @@ $(function() {
             $.ajax({
                 url: "https://api.sendgrid.com/api/mail.send.json",
                 type: "POST",
-                headers: { 'Origin': 'https://nilstgmd.github.io' },
+                headers: { 'Access-Control-Allow-Origin': '*', 'Origin': 'https://nilstgmd.github.io' },
                 crossDomain: true,
                 data: {
                     api_user: "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",
