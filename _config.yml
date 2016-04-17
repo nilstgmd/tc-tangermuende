@@ -1,10 +1,10 @@
-url: https://nilstgmd.github.io/
+url: https://nilstgmd.github.io
 baseurl: /tc-tangermuende
 
 # Site settings
 title: Tennisclub Tangermünde 93 e.V.
 email: olaf.meder@rosier.de
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+description: "Willkommen im Tennisclub Tangermünde 93 e.V. Informieren Sie sich bei uns über Tennistraining, Platzmiete und unsere Kinder- und Jugendarbeit."
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
