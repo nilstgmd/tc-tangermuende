@@ -18,7 +18,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "https://formspree.io/nilstgmd@gmx.de",
+                url: "https://formspree.io/olaf.meder@rosier.de",
                 type: "POST",
                 data: {_replyto: email, Name: name, Telefonnummer: phone, Nachricht: message, _subject: "Neue Nachricht für TC Tangermünde"},
                 dataType: "json",
